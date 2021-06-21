@@ -1,3 +1,9 @@
 [submodule "catkin_ws/src/darknet_ros"]
 	path = catkin_ws/src/darknet_ros
 	url = https://github.com/ARG-NCTU/darknet_ros.git
+[submodule "catkin_ws/src/egohands_ros"]
+	path = catkin_ws/src/egohands_ros
+	url = https://github.com/ARG-NCTU/egohands_ros.git
+[submodule "catkin_ws/src/bodyparts_ros"]
+	path = catkin_ws/src/bodyparts_ros
+	url = https://github.com/ARG-NCTU/bodyparts_ros.git
