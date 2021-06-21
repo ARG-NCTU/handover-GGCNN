@@ -1,61 +1,35 @@
 #! /bin/bash
 
 # echo "password: $2"
-BRANCH=master
+BRANCH=main
 if [ ! -z "$1" ]; then
     echo "pull branch: $1"
     BRANCH=$1
 fi
 
 echo "-----------------------------------------------------------------------"
-echo "-------------------------pull mm-medical-------------------------------"
+echo "-------------------------pull handover-GGCNN-------------------------------"
 echo "-----------------------------------------------------------------------"
 git pull
 
 CONFLICTS=$(git ls-files -u | wc -l)
 if [ "$CONFLICTS" -gt 0 ] ; then
-   echo "There is conflict in mm-medical. Aborting"
+   echo "There is conflict in handover-GGCNN. Aborting"
    return 1
 fi
 
 echo "-----------------------------------------------------------------------"
-echo "-------------------------pull interbotix_ros_arms----------------------"
+echo "-------------------------pull darknet_ros----------------------"
 echo "-----------------------------------------------------------------------"
-cd ~/mm-medical/catkin_ws/src/interbotix_ros_arms
-git checkout $BRANCH
+cd ~/mm-medical/catkin_ws/src/darknet_ros
+git checkout master
 git pull
 
 CONFLICTS=$(git ls-files -u | wc -l)
 if [ "$CONFLICTS" -gt 0 ] ; then
-   echo "There is conflict in mm-core. Aborting"
+   echo "There is conflict in darknet_ros. Aborting"
    return 1
 fi
 
-echo "-----------------------------------------------------------------------"
-echo "-------------------------pull mm-core----------------------------------"
-echo "-----------------------------------------------------------------------"
-cd ~/mm-medical/catkin_ws/src/mm-core
-git checkout $BRANCH
-git pull
-
-CONFLICTS=$(git ls-files -u | wc -l)
-if [ "$CONFLICTS" -gt 0 ] ; then
-   echo "There is conflict in mm-core. Aborting"
-   return 1
-fi
-
-echo "-----------------------------------------------------------------------"
-echo "-------------------------pull subt-core--------------------------------"
-echo "-----------------------------------------------------------------------"
-cd ~/mm-medical/catkin_ws/src/subt-core
-git checkout $BRANCH
-git pull
-
-CONFLICTS=$(git ls-files -u | wc -l)
-if [ "$CONFLICTS" -gt 0 ] ; then
-   echo "There is conflict in subt-core. Aborting"
-   return 1
-fi
-
-cd ~/mm-medical
+cd ~/handover-GGCNN
 return 0

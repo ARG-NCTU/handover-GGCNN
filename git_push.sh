@@ -20,43 +20,25 @@ source git_pull.sh $BRANCH
 PULLSTAT=$?
 if [ "$PULLSTAT" -gt 0 ] ; then
    echo "There is conflict. Aborting"
-   cd ~/mm-medical/
+   cd ~/handover-GGCNN/
    return
 fi
 echo "-------------------------pull success----------------------------------"
 
-# push core
-echo "-----------------------------------------------------------------------"
-echo "-------------------------push mm-core----------------------------------"
-echo "-----------------------------------------------------------------------"
-cd ~/mm-medical/catkin_ws/src/mm-core
-git add -A
-git commit -m "$1 on core"
-git push
-
-# push core
-echo "-----------------------------------------------------------------------"
-echo "-------------------------push subt-core--------------------------------"
-echo "-----------------------------------------------------------------------"
-cd ~/mm-medical/catkin_ws/src/subt-core
-git add -A
-git commit -m "$1 on core"
-git push
-
 # push arm
 echo "-----------------------------------------------------------------------"
-echo "-------------------------push interbotix_ros_arms----------------------"
+echo "-------------------------push darknet_ros----------------------"
 echo "-----------------------------------------------------------------------"
-cd ~/mm-medical/catkin_ws/src/interbotix_ros_arms
+cd ~/handover-GGCNN/catkin_ws/src/darknet_ros
 git add -A
-git commit -m "$1 on core"
+git commit -m "$1 darknet_ros"
 git push
 
 # push main
 echo "-----------------------------------------------------------------------"
-echo "-------------------------push mm-medical-------------------------------"
+echo "-------------------------push handover-GGCNN-------------------------------"
 echo "-----------------------------------------------------------------------"
-cd ~/mm-medical/
+cd ~/handover-GGCNN/
 git add -A
 git commit -m "$1"
 git push 
