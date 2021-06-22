@@ -15,7 +15,7 @@ fi
 
 BASH_OPTION=bash
 
-IMG=argnctu/medical:pc_gpu
+IMG=argnctu/medical:ggcnn
 
 xhost +
 containerid=$(docker ps -aqf "ancestor=${IMG}") && echo $containerid

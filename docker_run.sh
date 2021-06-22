@@ -69,5 +69,5 @@ docker run \
     --privileged \
     --security-opt seccomp=unconfined \
     $DOCKER_OPTS \
-    argnctu/medical:pc_gpu \
+    argnctu/medical:ggcnn \
     $BASH_OPTION
