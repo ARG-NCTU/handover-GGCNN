@@ -7,3 +7,6 @@
 [submodule "catkin_ws/src/bodyparts_ros"]
 	path = catkin_ws/src/bodyparts_ros
 	url = https://github.com/ARG-NCTU/bodyparts_ros.git
+[submodule "catkin_ws/src/ggcnn_humanseg_ros"]
+	path = catkin_ws/src/ggcnn_humanseg_ros
+	url = https://github.com/ARG-NCTU/ggcnn_humanseg_ros.git
